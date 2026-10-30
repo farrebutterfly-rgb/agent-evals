@@ -1,0 +1,8 @@
+{
+  "file": "documents.json",
+  "dataset_version": "r1-docs-v1",
+  "sha256": "156112c18c2e1a976610d363e3b2363d4aeb2b8fc1c3ef2e1b09139c1701eb5d",
+  "frozen_at": "2026-10-30",
+  "dev": 10,
+  "heldout": 20
+}

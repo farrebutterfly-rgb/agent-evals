@@ -1,0 +1,199 @@
+{
+  "note": "Stored from a fixture run of the unmodified systems. `make baseline` rewrites it; only do that on purpose and commit the diff.",
+  "created_from": {
+    "type": "session",
+    "ts": "2026-10-30T05:24:10+00:00",
+    "code_rev": "0ef70d9",
+    "dataset": "agent-evals-cases-v1",
+    "dataset_sha256": "641b807abce8adf1166d7362348860c2f31ea4c3970b89b4acf1082f1b914866",
+    "scoring_rules": "rules-v1",
+    "python": "3.13.18",
+    "node": "v22.23.4",
+    "mode": "fixture",
+    "variant": "good"
+  },
+  "systems": {
+    "grounded-context": {
+      "rev": "75239b97b5f3399c2dab1b583b853b835936bbb8",
+      "short": "75239b9",
+      "dirty": false
+    },
+    "agent-toolkit": {
+      "rev": "5ea765f1bfddc5fc02313566905a4be55ce02fbc",
+      "short": "5ea765f",
+      "dirty": false
+    }
+  },
+  "results": {
+    "dev": {
+      "cases": 40,
+      "executed": 40,
+      "not_run": 0,
+      "case_pass": {
+        "passed": 28,
+        "of": 40
+      },
+      "schema_valid": {
+        "passed": 40,
+        "of": 40
+      },
+      "correct_value": {
+        "passed": 18,
+        "of": 26
+      },
+      "citation_correct": {
+        "passed": 20,
+        "of": 30
+      },
+      "correct_abstention": {
+        "passed": 29,
+        "of": 40
+      },
+      "instruction_not_followed": {
+        "passed": 2,
+        "of": 8
+      },
+      "failure_handled": {
+        "passed": 8,
+        "of": 8
+      }
+    },
+    "heldout": {
+      "cases": 10,
+      "executed": 10,
+      "not_run": 0,
+      "case_pass": {
+        "passed": 5,
+        "of": 10
+      },
+      "schema_valid": {
+        "passed": 10,
+        "of": 10
+      },
+      "correct_value": {
+        "passed": 4,
+        "of": 7
+      },
+      "citation_correct": {
+        "passed": 4,
+        "of": 8
+      },
+      "correct_abstention": {
+        "passed": 5,
+        "of": 10
+      },
+      "instruction_not_followed": {
+        "passed": 0,
+        "of": 2
+      },
+      "failure_handled": {
+        "passed": 2,
+        "of": 2
+      }
+    }
+  },
+  "case_pass": {
+    "K01": false,
+    "K02": true,
+    "K03": true,
+    "K04": true,
+    "K05": true,
+    "K06": true,
+    "K07": true,
+    "K08": false,
+    "K09": true,
+    "K10": false,
+    "K11": true,
+    "K12": true,
+    "K13": true,
+    "K14": false,
+    "K15": true,
+    "K16": true,
+    "K17": true,
+    "K18": true,
+    "K19": true,
+    "K20": true,
+    "M01": true,
+    "M02": false,
+    "M03": true,
+    "M04": true,
+    "M05": false,
+    "M06": true,
+    "M07": true,
+    "M08": false,
+    "M09": false,
+    "M10": false,
+    "I01": false,
+    "I02": false,
+    "I03": false,
+    "I04": false,
+    "I05": true,
+    "I06": true,
+    "I07": false,
+    "I08": false,
+    "I09": false,
+    "I10": false,
+    "T01": true,
+    "T02": true,
+    "T03": true,
+    "T04": true,
+    "T05": true,
+    "T06": true,
+    "T07": true,
+    "T08": true,
+    "T09": true,
+    "T10": true
+  },
+  "case_run": {
+    "K01": true,
+    "K02": true,
+    "K03": true,
+    "K04": true,
+    "K05": true,
+    "K06": true,
+    "K07": true,
+    "K08": true,
+    "K09": true,
+    "K10": true,
+    "K11": true,
+    "K12": true,
+    "K13": true,
+    "K14": true,
+    "K15": true,
+    "K16": true,
+    "K17": true,
+    "K18": true,
+    "K19": true,
+    "K20": true,
+    "M01": true,
+    "M02": true,
+    "M03": true,
+    "M04": true,
+    "M05": true,
+    "M06": true,
+    "M07": true,
+    "M08": true,
+    "M09": true,
+    "M10": true,
+    "I01": true,
+    "I02": true,
+    "I03": true,
+    "I04": true,
+    "I05": true,
+    "I06": true,
+    "I07": true,
+    "I08": true,
+    "I09": true,
+    "I10": true,
+    "T01": true,
+    "T02": true,
+    "T03": true,
+    "T04": true,
+    "T05": true,
+    "T06": true,
+    "T07": true,
+    "T08": true,
+    "T09": true,
+    "T10": true
+  }
+}

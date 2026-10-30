@@ -1,0 +1,19 @@
+{
+  "dataset_version": "agent-evals-cases-v1",
+  "file": "data/cases-v1.json",
+  "sha256": "641b807abce8adf1166d7362348860c2f31ea4c3970b89b4acf1082f1b914866",
+  "frozen_at": "2026-10-30",
+  "n_cases": 50,
+  "by_category": {
+    "known_support": 20,
+    "missing_or_conflict": 10,
+    "prompt_injection": 10,
+    "tool_failure": 10
+  },
+  "by_split": {
+    "dev": 40,
+    "heldout": 10
+  },
+  "scoring_rules_version": "rules-v1",
+  "note": "Frozen before the first run. The harness refuses to run if the file hash differs from this value."
+}
