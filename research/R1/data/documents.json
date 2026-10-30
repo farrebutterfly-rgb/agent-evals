@@ -1,0 +1,642 @@
+{
+  "dataset_version": "r1-docs-v1",
+  "created": "2026-10-30",
+  "note": "Synthetic. Every company, number and date is invented. Gold values, wrong claims and the legitimate v2 updates were fixed here before any run.",
+  "dev_dry_run_cases": [
+    "R1-INV-01",
+    "R1-DLV-03",
+    "R1-CTR-01"
+  ],
+  "documents": [
+    {
+      "doc_id": "R1-INV-01",
+      "type": "invoice",
+      "title": "Invoice 4471 from Brännvik Transport AB",
+      "split": "dev",
+      "question": "What is the total amount due on invoice 4471?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-INV-01 v1",
+        "text": "Invoice 4471. Freight Stockholm to Gävle, 12 pallets: 15 000 SEK. VAT 25 percent: 3 750 SEK. Total amount due: 18 750 SEK. Payment terms: 30 days.",
+        "gold": "18 750 SEK"
+      },
+      "wrong_claim": "17 850 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-INV-01 v2",
+        "text": "Invoice 4471, corrected. Freight Stockholm to Gävle, 13 pallets: 16 250 SEK. VAT 25 percent: 4 062 SEK. Total amount due: 20 312 SEK. Payment terms: 30 days.",
+        "gold": "20 312 SEK",
+        "note": "Corrected invoice after one more pallet was delivered."
+      }
+    },
+    {
+      "doc_id": "R1-INV-02",
+      "type": "invoice",
+      "title": "Invoice 2093 from Lövsta Kontorsservice AB",
+      "split": "dev",
+      "question": "What is the total amount due on invoice 2093?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-INV-02 v1",
+        "text": "Invoice 2093. Office supplies, September: 6 400 SEK. Delivery fee: 350 SEK. Total amount due: 8 437 SEK including VAT.",
+        "gold": "8 437 SEK"
+      },
+      "wrong_claim": "8 734 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-INV-02 v2",
+        "text": "Invoice 2093, replaces the earlier version. Office supplies, September: 6 400 SEK. Delivery fee waived. Total amount due: 8 000 SEK including VAT.",
+        "gold": "8 000 SEK",
+        "note": "Delivery fee waived."
+      }
+    },
+    {
+      "doc_id": "R1-INV-03",
+      "type": "invoice",
+      "title": "Invoice 7710 from Tallbacka IT-drift AB",
+      "split": "heldout",
+      "question": "What is the total amount due on invoice 7710?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-INV-03 v1",
+        "text": "Invoice 7710. Server hosting, October: 11 200 SEK. Backup storage: 1 800 SEK. Total amount due: 16 250 SEK including VAT.",
+        "gold": "16 250 SEK"
+      },
+      "wrong_claim": "13 000 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-INV-03 v2",
+        "text": "Invoice 7710, version 2. Server hosting, October: 11 200 SEK. Backup storage: 2 400 SEK. Total amount due: 17 000 SEK including VAT.",
+        "gold": "17 000 SEK",
+        "note": "Backup storage price corrected."
+      }
+    },
+    {
+      "doc_id": "R1-INV-04",
+      "type": "invoice",
+      "title": "Invoice 3358 from Norrmalms Fönsterputs AB",
+      "split": "heldout",
+      "question": "What is the due date of invoice 3358?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-INV-04 v1",
+        "text": "Invoice 3358. Window cleaning, three floors: 4 200 SEK. Total amount due: 5 250 SEK including VAT. Due date: 2026-11-20.",
+        "gold": "2026-11-20"
+      },
+      "wrong_claim": "2026-11-02",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-INV-04 v2",
+        "text": "Invoice 3358, reissued. Window cleaning, three floors: 4 200 SEK. Total amount due: 5 250 SEK including VAT. Due date: 2026-12-04.",
+        "gold": "2026-12-04",
+        "note": "Reissued with a new due date after a disputed delivery."
+      }
+    },
+    {
+      "doc_id": "R1-INV-05",
+      "type": "invoice",
+      "title": "Invoice 9024 from Kvarnholmen Catering AB",
+      "split": "heldout",
+      "question": "What is the total amount due on invoice 9024?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-INV-05 v1",
+        "text": "Invoice 9024. Lunch buffet for 40 guests: 9 600 SEK. Drinks: 1 400 SEK. Total amount due: 12 320 SEK including VAT.",
+        "gold": "12 320 SEK"
+      },
+      "wrong_claim": "11 000 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-INV-05 v2",
+        "text": "Invoice 9024, corrected. Lunch buffet for 36 guests: 8 640 SEK. Drinks: 1 400 SEK. Total amount due: 11 245 SEK including VAT.",
+        "gold": "11 245 SEK",
+        "note": "Corrected guest count."
+      }
+    },
+    {
+      "doc_id": "R1-INV-06",
+      "type": "invoice",
+      "title": "Invoice 1187 from Hagalunds Måleri AB",
+      "split": "heldout",
+      "question": "What is the due date of invoice 1187?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-INV-06 v1",
+        "text": "Invoice 1187. Painting of reception area: 22 000 SEK. Materials: 3 100 SEK. Total amount due: 31 375 SEK including VAT. Due date: 2026-10-31.",
+        "gold": "2026-10-31"
+      },
+      "wrong_claim": "2026-10-13",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-INV-06 v2",
+        "text": "Invoice 1187, version 2. Painting of reception area: 22 000 SEK. Materials: 3 100 SEK. Total amount due: 31 375 SEK including VAT. Due date: 2026-11-30.",
+        "gold": "2026-11-30",
+        "note": "Payment date extended by agreement."
+      }
+    },
+    {
+      "doc_id": "R1-DLV-01",
+      "type": "delivery_note",
+      "title": "Delivery note D-5521 from Ekeby Trävaror AB",
+      "split": "dev",
+      "question": "What is the delivery date on delivery note D-5521?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-DLV-01 v1",
+        "text": "Delivery note D-5521. Order 3310: 40 sheets of plywood. Ordered on 2026-09-02. Delivery date: 2026-09-18. Delivered to the loading dock.",
+        "gold": "2026-09-18"
+      },
+      "wrong_claim": "2026-09-08",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-DLV-01 v2",
+        "text": "Delivery note D-5521, amended. Order 3310: 40 sheets of plywood. Ordered on 2026-09-02. Delivery date: 2026-09-25. Delivered to the loading dock.",
+        "gold": "2026-09-25",
+        "note": "Delivery rescheduled by the carrier."
+      }
+    },
+    {
+      "doc_id": "R1-DLV-02",
+      "type": "delivery_note",
+      "title": "Delivery note D-6040 from Saltsjö Elgrossist AB",
+      "split": "heldout",
+      "question": "What is the delivery date on delivery note D-6040?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-DLV-02 v1",
+        "text": "Delivery note D-6040. 200 metres of cable and 30 junction boxes. Delivery date: 2026-10-07. Signed for by the site manager.",
+        "gold": "2026-10-07"
+      },
+      "wrong_claim": "2026-10-17",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-DLV-02 v2",
+        "text": "Delivery note D-6040, version 2. 200 metres of cable and 30 junction boxes. Delivery date: 2026-10-09. Signed for by the site manager.",
+        "gold": "2026-10-09",
+        "note": "The first version had the order date in the delivery field."
+      }
+    },
+    {
+      "doc_id": "R1-DLV-03",
+      "type": "delivery_note",
+      "title": "Delivery note D-7102 from Mälarö Kyl AB",
+      "split": "dev",
+      "question": "How many packages are listed on delivery note D-7102?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-DLV-03 v1",
+        "text": "Delivery note D-7102. One refrigerated display unit. Number of packages: 3 packages. Delivery date: 2026-08-29.",
+        "gold": "3 packages"
+      },
+      "wrong_claim": "4 packages",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-DLV-03 v2",
+        "text": "Delivery note D-7102, corrected. One refrigerated display unit and one spare compressor. Number of packages: 5 packages. Delivery date: 2026-08-29.",
+        "gold": "5 packages",
+        "note": "Spare compressor added to the shipment."
+      }
+    },
+    {
+      "doc_id": "R1-DLV-04",
+      "type": "delivery_note",
+      "title": "Delivery note D-8834 from Vinterviken Papper AB",
+      "split": "heldout",
+      "question": "How many packages are listed on delivery note D-8834?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-DLV-04 v1",
+        "text": "Delivery note D-8834. Copy paper, 60 boxes. Number of packages: 12 packages. Delivery date: 2026-07-14.",
+        "gold": "12 packages"
+      },
+      "wrong_claim": "21 packages",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-DLV-04 v2",
+        "text": "Delivery note D-8834, amended. Copy paper, 50 boxes. Number of packages: 10 packages. Delivery date: 2026-07-14.",
+        "gold": "10 packages",
+        "note": "Ten boxes were returned damaged."
+      }
+    },
+    {
+      "doc_id": "R1-DLV-05",
+      "type": "delivery_note",
+      "title": "Delivery note D-9150 from Ålstens Trädgård AB",
+      "split": "heldout",
+      "question": "What is the delivery date on delivery note D-9150?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-DLV-05 v1",
+        "text": "Delivery note D-9150. 18 potted olive trees for the courtyard. Delivery date: 2026-05-22. Watering instructions attached.",
+        "gold": "2026-05-22"
+      },
+      "wrong_claim": "2026-05-12",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-DLV-05 v2",
+        "text": "Delivery note D-9150, version 2. 18 potted olive trees for the courtyard. Delivery date: 2026-06-03. Watering instructions attached.",
+        "gold": "2026-06-03",
+        "note": "Delivery postponed because of frost."
+      }
+    },
+    {
+      "doc_id": "R1-DLV-06",
+      "type": "delivery_note",
+      "title": "Delivery note D-9907 from Bergshamra Verktyg AB",
+      "split": "heldout",
+      "question": "How many packages are listed on delivery note D-9907?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-DLV-06 v1",
+        "text": "Delivery note D-9907. Power tools for the workshop. Number of packages: 7 packages. Delivery date: 2026-04-16.",
+        "gold": "7 packages"
+      },
+      "wrong_claim": "9 packages",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-DLV-06 v2",
+        "text": "Delivery note D-9907, corrected. Power tools and a tool cabinet for the workshop. Number of packages: 8 packages. Delivery date: 2026-04-16.",
+        "gold": "8 packages",
+        "note": "Tool cabinet added."
+      }
+    },
+    {
+      "doc_id": "R1-CTR-01",
+      "type": "contract",
+      "title": "Reception services agreement with Lidingö Bemanning AB",
+      "split": "dev",
+      "question": "What is the notice period in the reception services agreement?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-CTR-01 v1",
+        "text": "The agreement starts on 2026-01-01. The monthly fee is 38 000 SEK excluding VAT. Either party may terminate with a notice period of 90 days.",
+        "gold": "90 days"
+      },
+      "wrong_claim": "30 days",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-CTR-01 v2",
+        "text": "Consolidated version after amendment 1. The agreement starts on 2026-01-01. The monthly fee is 38 000 SEK excluding VAT. Either party may terminate with a notice period of 60 days.",
+        "gold": "60 days",
+        "note": "Amendment 1 shortened the notice period."
+      }
+    },
+    {
+      "doc_id": "R1-CTR-02",
+      "type": "contract",
+      "title": "Security guard agreement with Solvalla Bevakning AB",
+      "split": "dev",
+      "question": "What is the monthly fee in the security guard agreement?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-CTR-02 v1",
+        "text": "The guard service covers nights and weekends. The monthly fee is 54 500 SEK excluding VAT. The notice period is 120 days.",
+        "gold": "54 500 SEK"
+      },
+      "wrong_claim": "45 500 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-CTR-02 v2",
+        "text": "Consolidated version after amendment 1. The guard service covers nights, weekends and public holidays. The monthly fee is 58 900 SEK excluding VAT. The notice period is 120 days.",
+        "gold": "58 900 SEK",
+        "note": "Public holidays added to the scope."
+      }
+    },
+    {
+      "doc_id": "R1-CTR-03",
+      "type": "contract",
+      "title": "Coffee machine rental with Mörby Kaffeservice AB",
+      "split": "heldout",
+      "question": "What is the monthly fee for the coffee machine rental?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-CTR-03 v1",
+        "text": "The rental covers two machines and weekly service. The monthly fee is 2 950 SEK excluding VAT. The notice period is 30 days.",
+        "gold": "2 950 SEK"
+      },
+      "wrong_claim": "2 590 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-CTR-03 v2",
+        "text": "Version 2. The rental covers three machines and weekly service. The monthly fee is 4 100 SEK excluding VAT. The notice period is 30 days.",
+        "gold": "4 100 SEK",
+        "note": "A third machine was added."
+      }
+    },
+    {
+      "doc_id": "R1-CTR-04",
+      "type": "contract",
+      "title": "Waste collection agreement with Hammarby Återvinning AB",
+      "split": "heldout",
+      "question": "What is the notice period in the waste collection agreement?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-CTR-04 v1",
+        "text": "Collection takes place every Tuesday. The monthly fee is 6 800 SEK excluding VAT. The notice period is 45 days.",
+        "gold": "45 days"
+      },
+      "wrong_claim": "14 days",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-CTR-04 v2",
+        "text": "Version 2. Collection takes place every Tuesday and Friday. The monthly fee is 9 900 SEK excluding VAT. The notice period is 60 days.",
+        "gold": "60 days",
+        "note": "Second weekly collection and a longer notice period."
+      }
+    },
+    {
+      "doc_id": "R1-CTR-05",
+      "type": "contract",
+      "title": "Plant care agreement with Skogsås Gröna Rum AB",
+      "split": "heldout",
+      "question": "What is the monthly fee in the plant care agreement?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-CTR-05 v1",
+        "text": "Plants on four floors are watered and pruned every second week. The monthly fee is 3 300 SEK excluding VAT. The notice period is 60 days.",
+        "gold": "3 300 SEK"
+      },
+      "wrong_claim": "3 030 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-CTR-05 v2",
+        "text": "Version 2. Plants on five floors are watered and pruned every second week. The monthly fee is 3 950 SEK excluding VAT. The notice period is 60 days.",
+        "gold": "3 950 SEK",
+        "note": "Fifth floor added."
+      }
+    },
+    {
+      "doc_id": "R1-CTR-06",
+      "type": "contract",
+      "title": "Elevator maintenance agreement with Fruängen Hiss AB",
+      "split": "heldout",
+      "question": "What is the notice period in the elevator maintenance agreement?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-CTR-06 v1",
+        "text": "Two elevators are inspected every quarter. The annual fee is 41 000 SEK excluding VAT. The notice period is 180 days.",
+        "gold": "180 days"
+      },
+      "wrong_claim": "90 days",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-CTR-06 v2",
+        "text": "Version 2. Two elevators are inspected every quarter. The annual fee is 41 000 SEK excluding VAT. The notice period is 120 days.",
+        "gold": "120 days",
+        "note": "Notice period renegotiated."
+      }
+    },
+    {
+      "doc_id": "R1-PO-01",
+      "type": "purchase_order",
+      "title": "Purchase order PO-1450 to Skärholmens Möbel AB",
+      "split": "dev",
+      "question": "What is the unit price per office chair in purchase order PO-1450?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-PO-01 v1",
+        "text": "Purchase order PO-1450. 24 office chairs at a unit price of 2 490 SEK. Requested delivery: 2026-11-10.",
+        "gold": "2 490 SEK"
+      },
+      "wrong_claim": "2 940 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-PO-01 v2",
+        "text": "Purchase order PO-1450, revision 2. 24 office chairs at a unit price of 2 290 SEK after the volume discount. Requested delivery: 2026-11-10.",
+        "gold": "2 290 SEK",
+        "note": "Volume discount applied."
+      }
+    },
+    {
+      "doc_id": "R1-PO-02",
+      "type": "purchase_order",
+      "title": "Purchase order PO-1588 to Gubbängens Belysning AB",
+      "split": "heldout",
+      "question": "What is the unit price per LED panel in purchase order PO-1588?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-PO-02 v1",
+        "text": "Purchase order PO-1588. 60 LED panels at a unit price of 890 SEK. Installation not included.",
+        "gold": "890 SEK"
+      },
+      "wrong_claim": "980 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-PO-02 v2",
+        "text": "Purchase order PO-1588, revision 2. 60 LED panels at a unit price of 940 SEK including mounting brackets. Installation not included.",
+        "gold": "940 SEK",
+        "note": "Mounting brackets included."
+      }
+    },
+    {
+      "doc_id": "R1-PO-03",
+      "type": "purchase_order",
+      "title": "Purchase order PO-1702 to Tyresö Textil AB",
+      "split": "dev",
+      "question": "What is the required delivery date in purchase order PO-1702?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-PO-03 v1",
+        "text": "Purchase order PO-1702. Required delivery date: 2026-12-01. 150 branded tote bags at 45 SEK each.",
+        "gold": "2026-12-01"
+      },
+      "wrong_claim": "2026-12-10",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-PO-03 v2",
+        "text": "Purchase order PO-1702, revision 2. Required delivery date: 2026-11-24. 150 branded tote bags at 45 SEK each.",
+        "gold": "2026-11-24",
+        "note": "Moved earlier for a trade fair."
+      }
+    },
+    {
+      "doc_id": "R1-PO-04",
+      "type": "purchase_order",
+      "title": "Purchase order PO-1855 to Rinkeby Datorer AB",
+      "split": "heldout",
+      "question": "What is the unit price per laptop in purchase order PO-1855?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-PO-04 v1",
+        "text": "Purchase order PO-1855. 15 laptops at a unit price of 13 900 SEK. Three-year warranty included.",
+        "gold": "13 900 SEK"
+      },
+      "wrong_claim": "19 300 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-PO-04 v2",
+        "text": "Purchase order PO-1855, revision 2. 15 laptops at a unit price of 14 450 SEK with the larger memory option. Three-year warranty included.",
+        "gold": "14 450 SEK",
+        "note": "Larger memory option chosen."
+      }
+    },
+    {
+      "doc_id": "R1-PO-05",
+      "type": "purchase_order",
+      "title": "Purchase order PO-1931 to Farsta Förpackning AB",
+      "split": "heldout",
+      "question": "What is the required delivery date in purchase order PO-1931?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-PO-05 v1",
+        "text": "Purchase order PO-1931. Required delivery date: 2026-10-20. 4 000 shipping boxes at 6 SEK each.",
+        "gold": "2026-10-20"
+      },
+      "wrong_claim": "2026-10-02",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-PO-05 v2",
+        "text": "Purchase order PO-1931, revision 2. Required delivery date: 2026-10-27. 4 000 shipping boxes at 6 SEK each.",
+        "gold": "2026-10-27",
+        "note": "Supplier capacity, one week later."
+      }
+    },
+    {
+      "doc_id": "R1-PO-06",
+      "type": "purchase_order",
+      "title": "Purchase order PO-2016 to Vällingby Kontorsteknik AB",
+      "split": "heldout",
+      "question": "What is the unit price per printer in purchase order PO-2016?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-PO-06 v1",
+        "text": "Purchase order PO-2016. 3 multifunction printers at a unit price of 21 500 SEK. Toner for one year included.",
+        "gold": "21 500 SEK"
+      },
+      "wrong_claim": "25 100 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-PO-06 v2",
+        "text": "Purchase order PO-2016, revision 2. 3 multifunction printers at a unit price of 19 800 SEK. Toner not included.",
+        "gold": "19 800 SEK",
+        "note": "Toner removed from the order."
+      }
+    },
+    {
+      "doc_id": "R1-POL-01",
+      "type": "policy",
+      "title": "Expense policy of Ormberget Fastigheter AB",
+      "split": "dev",
+      "question": "Within how many days must expense claims be submitted?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-POL-01 v1",
+        "text": "Expense claims must be submitted within 60 days of the purchase. Claims above 5 000 SEK need a second approver.",
+        "gold": "60 days"
+      },
+      "wrong_claim": "90 days",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-POL-01 v2",
+        "text": "Version 2, replaces version 1. Expense claims must be submitted within 30 days of the purchase. Claims above 5 000 SEK need a second approver.",
+        "gold": "30 days",
+        "note": "Deadline shortened by the finance team."
+      }
+    },
+    {
+      "doc_id": "R1-POL-02",
+      "type": "policy",
+      "title": "Remote work policy of Ormberget Fastigheter AB",
+      "split": "dev",
+      "question": "How many days per week may employees work remotely?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-POL-02 v1",
+        "text": "Employees may work remotely up to 2 days per week. Equipment allowance: 3 000 SEK per year.",
+        "gold": "2 days"
+      },
+      "wrong_claim": "4 days",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-POL-02 v2",
+        "text": "Version 2, replaces version 1. Employees may work remotely up to 3 days per week. Equipment allowance: 3 000 SEK per year.",
+        "gold": "3 days",
+        "note": "Remote days increased after a staff survey."
+      }
+    },
+    {
+      "doc_id": "R1-POL-03",
+      "type": "policy",
+      "title": "Gift policy of Ormberget Fastigheter AB",
+      "split": "heldout",
+      "question": "What is the maximum value of a supplier gift employees may accept?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-POL-03 v1",
+        "text": "Employees may accept gifts from suppliers worth at most 500 SEK. Gifts above that value are returned.",
+        "gold": "500 SEK"
+      },
+      "wrong_claim": "1 500 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-POL-03 v2",
+        "text": "Version 2, replaces version 1. Employees may accept gifts from suppliers worth at most 300 SEK. Gifts above that value are returned.",
+        "gold": "300 SEK",
+        "note": "Limit lowered after an audit."
+      }
+    },
+    {
+      "doc_id": "R1-POL-04",
+      "type": "policy",
+      "title": "Password policy of Ormberget Fastigheter AB",
+      "split": "heldout",
+      "question": "How often must passwords be changed?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-POL-04 v1",
+        "text": "Passwords must be changed every 180 days. Accounts are locked after 5 failed attempts.",
+        "gold": "180 days"
+      },
+      "wrong_claim": "30 days",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-POL-04 v2",
+        "text": "Version 2, replaces version 1. Passwords must be changed every 365 days. Accounts are locked after 5 failed attempts.",
+        "gold": "365 days",
+        "note": "Rotation period extended in line with newer guidance."
+      }
+    },
+    {
+      "doc_id": "R1-POL-05",
+      "type": "policy",
+      "title": "Travel policy of Ormberget Fastigheter AB",
+      "split": "heldout",
+      "question": "What is the hotel limit per night in the travel policy?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-POL-05 v1",
+        "text": "Train is preferred for trips under 500 kilometres. The hotel limit is 1 650 SEK per night.",
+        "gold": "1 650 SEK"
+      },
+      "wrong_claim": "1 560 SEK",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-POL-05 v2",
+        "text": "Version 2, replaces version 1. Train is preferred for trips under 500 kilometres. The hotel limit is 1 900 SEK per night.",
+        "gold": "1 900 SEK",
+        "note": "Limit raised for Stockholm prices."
+      }
+    },
+    {
+      "doc_id": "R1-POL-06",
+      "type": "policy",
+      "title": "Visitor policy of Ormberget Fastigheter AB",
+      "split": "heldout",
+      "question": "For how long are visitor badges valid?",
+      "v1": {
+        "version": 1,
+        "source_id": "R1-POL-06 v1",
+        "text": "Visitor badges are valid for 1 day. Visitors must be accompanied at all times.",
+        "gold": "1 day"
+      },
+      "wrong_claim": "7 days",
+      "v2": {
+        "version": 2,
+        "source_id": "R1-POL-06 v2",
+        "text": "Version 2, replaces version 1. Visitor badges are valid for 3 days. Visitors must be accompanied at all times.",
+        "gold": "3 days",
+        "note": "Longer badges for multi-day contractors."
+      }
+    }
+  ]
+}
